@@ -1,0 +1,155 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Testes
+meta:
+  id: wrk_bae22a7959df4652bc38e73649b6445e
+  created: 1767036554342
+  modified: 1767051157050
+  description: ""
+collection:
+  - url: http://localhost:3000/tasks
+    name: Criar tarefa (POST)
+    meta:
+      id: req_c354429396d240db8045f4fbceb3608f
+      created: 1767047195913
+      modified: 1767047654049
+      isPrivate: false
+      description: ""
+      sortKey: -1767047195913
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"titulo": "Estudar NestJS", 
+        	"descricao": "Estudar pelo youtube e praticar",
+        	"status": "A_FAZER"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.2.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks
+    name: Listar todas as tarefas já criadas (GET)
+    meta:
+      id: req_42370555f97d4eba82c643889407cee6
+      created: 1767049237612
+      modified: 1767049282767
+      isPrivate: false
+      description: ""
+      sortKey: -1767049237612
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks/14
+    name: Buscar tarefa por id (GET)
+    meta:
+      id: req_992ec77a3515483f88271c825f92d584
+      created: 1767049314095
+      modified: 1767049349209
+      isPrivate: false
+      description: ""
+      sortKey: -1767049314095
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks/14
+    name: Atualizar tarefa de id"14" (PUT)
+    meta:
+      id: req_695c16af1b6943e2abcc8418039bca91
+      created: 1767049392365
+      modified: 1767049514110
+      isPrivate: false
+      description: ""
+      sortKey: -1767049392365
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"status": "FAZENDO"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.2.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/tasks/14
+    name: Deletar tarefa (DELETE)
+    meta:
+      id: req_c9b1c40da5be4f7aac7548043ec87de9
+      created: 1767049540326
+      modified: 1767049569467
+      isPrivate: false
+      description: ""
+      sortKey: -1767049540326
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.2.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d2639d86d47bd25acb75555815a9c1fe71e5a3b0
+    created: 1767036554374
+    modified: 1767036554374
+environments:
+  name: Base Environment
+  meta:
+    id: env_d2639d86d47bd25acb75555815a9c1fe71e5a3b0
+    created: 1767036554353
+    modified: 1767036554353
+    isPrivate: false

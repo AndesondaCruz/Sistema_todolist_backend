@@ -1,3 +1,4 @@
+import { CreateTaskDto } from './dto/create-task.dto';
 import {
   Controller,
   Get,
@@ -16,16 +17,14 @@ import { TaskStatus } from './task.model';
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
-  @Post()
-  async create(
-    @Body('titulo') titulo: string,
-    @Body('descricao') descricao: string,
-    @Body('status') status: TaskStatus,
-  ): Promise<TaskEntity> {
-    return this.tasksService.create(titulo, descricao, status);
-  }
+@Post()
+async create(
+  @Body() createTaskDto: CreateTaskDto,
+): Promise<TaskEntity> {
+  return this.tasksService.create(createTaskDto);
+}
 
-  @Get()
+ @Get()
   async findAll(): Promise<TaskEntity[]> {
     return this.tasksService.findAll();
   }
