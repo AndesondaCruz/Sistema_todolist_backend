@@ -1,3 +1,11 @@
+# Sistema Todolist Backend
+
+API REST para gerenciamento de tarefas, desenvolvida como forma de organizar minhas próprias atividades e, ao mesmo tempo, aprofundar meus estudos em backend e banco de dados, colocando em prática conceitos que muitas vezes ficam apenas na teoria.
+
+O projeto segue o padrão REST, e é baseado no método KANBAM nele permite criar, listar, atualizar e remover tarefas, servindo como base para estudos em arquitetura backend, persistência de dados e boas práticas com NestJS.
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
