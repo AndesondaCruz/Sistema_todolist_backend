@@ -2,7 +2,43 @@
 
 API REST para gerenciamento de tarefas, desenvolvida como forma de organizar minhas próprias atividades e, ao mesmo tempo, aprofundar meus estudos em backend e banco de dados, colocando em prática conceitos que muitas vezes ficam apenas na teoria.
 
-O projeto segue o padrão REST, e é baseado no método KANBAM nele permite criar, listar, atualizar e remover tarefas, servindo como base para estudos em arquitetura backend, persistência de dados e boas práticas com NestJS.
+O projeto segue o padrão REST, e é baseado no método KANBAN nele permite criar, listar, atualizar e remover tarefas, servindo como base para estudos em arquitetura backend, persistência de dados e boas práticas com NestJS.
+
+
+## 🚀 Tecnologias Utilizadas
+- NestJS
+- TypeScript
+- PostgreSQL
+- TypeORM
+- Docker e Docker Compose
+- Insomnia (testes das rotas)
+
+## 📚 Funcionalidades
+- Criar tarefa
+- Listar todas as tarefas
+- Buscar tarefa por ID
+- Atualizar tarefa
+- Remover tarefa
+
+## 🧱 Estrutura do Projeto
+- Controllers para rotas HTTP
+- Services para regras de negócio
+- DTOs para validação de dados
+- Entity para mapeamento da tabela no banco
+- Banco de dados PostgreSQL
+
+## ⚙️ Como executar o projeto
+
+### Pré-requisitos
+- Docker
+- Docker Compose
+
+### Passos
+```bash
+git clone https://github.com/AndesondaCruz/Sistema_todolist_backend.git
+cd Sistema_todolist_backend
+docker compose up -d
+
 
 ---
 
