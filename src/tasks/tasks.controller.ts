@@ -5,13 +5,22 @@ import {
   Post,
   Put,
   Delete,
+  Patch,
   Body,
   Param,
+  Query,
+  DefaultValuePipe,
+  ParseEnumPipe,
   ParseIntPipe,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { TaskEntity } from './task.entity';
 import { TaskStatus } from './task.model';
+import { UpdateTaskDto } from './dto/update-task.dto';
+import { FilterTaskDto } from './dto/filter-task.dto';
+import { UpdateTaskTagsDto } from './dto/update-task-tags.dto';
+
+
 
 @Controller('tasks')
 export class TasksController {
@@ -24,10 +33,18 @@ async create(
   return this.tasksService.create(createTaskDto);
 }
 
+@Post(':id/tags')
+addTags(
+  @Param('id') id: number,
+  @Body('tagIds') tagIds: number[],
+) {
+  return this.tasksService.addTagsToTask(+id, tagIds);
+}
+
  @Get()
-  async findAll(): Promise<TaskEntity[]> {
-    return this.tasksService.findAll();
-  }
+findAll(@Query() filterDto: FilterTaskDto) {
+  return this.tasksService.findAll(filterDto);
+}
 
   @Get(':id')
   async findById(
@@ -35,6 +52,22 @@ async create(
   ): Promise<TaskEntity> {
     return this.tasksService.findById(id);
   }
+
+  @Patch(':id')
+updatePartial(
+  @Param('id', ParseIntPipe) id: number,
+  @Body() updateTaskDto: UpdateTaskDto,
+) {
+  return this.tasksService.updatePartial(id, updateTaskDto);
+}
+
+  @Patch(':taskId/tags')
+updateTags(
+  @Param('taskId', ParseIntPipe) taskId: number,
+  @Body() dto: UpdateTaskTagsDto,
+) {
+  return this.tasksService.updateTaskTags(taskId, dto.tagIds);
+}
 
   @Put(':id')
   async update(
@@ -52,4 +85,12 @@ async create(
   ): Promise<void> {
     await this.tasksService.delete(id);
   }
+  
+  @Delete(':taskId/tags/:tagId')
+removeTag(
+  @Param('taskId', ParseIntPipe) taskId: number,
+  @Param('tagId', ParseIntPipe) tagId: number,
+) {
+  return this.tasksService.removeTagFromTask(taskId, tagId);
+}
 }
